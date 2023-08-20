@@ -122,3 +122,24 @@ Hands on will add it to the repo
 - Application Load Balancer
 - Health Checks support the TCP,HTTP and HTPTPS Protocols
 ![nlb target group](https://github.com/alinedam/Sitech-Internship/assets/108859223/f2e5508e-47f1-4395-b09d-7ae224a20479)
+# Gateway Load Balancer
+
+- Deploy, scale, and manage a fleet of 3rd party network virtual appliances in AWS
+- Example: Firewalls, Intrusion Detection and
+Prevention Systems, Deep Packet Inspection
+Systems, payload manipulation, …
+- Operates at Layer 3 (Network Layer) – IP
+Packets
+- Combines the following functions:
+    - Transparent Network Gateway – single entry/exit for all traffic
+    - Load Balancer – distributes traffic to your virtual appliances
+    - Uses the GENEVE protocol on port 608
+    - 
+![Screenshot 2023-08-20 114226](https://github.com/alinedam/Sitech-Internship/assets/108859223/989da27c-d55b-419a-8e25-309ec177f9ee)
+
+
+# Gateway Load Balancer –Target Groups
+
+- Gateway Load Balancer –Target Groups
+- IP Addresses – must be private IPs
+- ![Screenshot 2023-08-20 114333](https://github.com/alinedam/Sitech-Internship/assets/108859223/3d50005b-6164-4574-bf15-7f6624c11e89)
