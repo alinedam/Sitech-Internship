@@ -48,7 +48,7 @@ Happy learning and coding!
 
 To get started with this repository:
 
-1. Clone the repository using:
+1. Clone the repository using: git clone https://github.com/alinedam/Sitech-Internship.git
 
    We hope you find this repository helpful for your DevOps internship journey. If you have any questions, feel free to ask!
 
