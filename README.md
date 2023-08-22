@@ -44,8 +44,6 @@ This repository is open-source under the [MIT License](LICENSE), allowing you to
 
 
 
-Happy learning and coding!
-
 To get started with this repository:
 
 1. Clone the repository using: git clone https://github.com/alinedam/Sitech-Internship.git
