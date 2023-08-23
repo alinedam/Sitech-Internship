@@ -132,3 +132,39 @@ urlpatterns = [
 Now, when you restart the server and visit localhost:8000, you should be able to see the HTML template you created:
 ![serveralisystem](https://github.com/alinedam/Sitech-Internship/assets/108859223/2558a87f-817c-4035-998c-c8fdd5faae1c)
 
+# **Make the docker App image**
+
+```bash
+# Dockerfile
+
+# The first instruction is what image we want to base our container on
+# We Use an official Python runtime as a parent image
+FROM python:3.7
+
+# Allows docker to cache installed dependencies between builds
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Mounts the application code to the image
+COPY . code
+WORKDIR /code
+
+EXPOSE 8000
+
+# runs the production server
+ENTRYPOINT ["python", "mysite/manage.py"]
+CMD ["runserver", "0.0.0.0:8000"]
+```
+
+# **Building and Running the Container**
+
+```bash
+$ cd
+$ docker build -t python-django-app .
+```
+
+The final step is to run the container you have just built using Docker:
+
+```bash
+$ docker run -it -p 8000:8000 python-django-app
+```
