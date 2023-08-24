@@ -62,7 +62,8 @@ DB
 update the connection
 string to leverage read
 replicas
-![Screenshot 2023-08-24 083912](https://github.com/alinedam/Sitech-Internship/assets/108859223/1332e872-6a3f-48f9-ab4b-23dd866657fb)
+![Screenshot 2023-08-24 083912](https://github.com/alinedam/Sitech-Internship/assets/108859223/bad004b2-04a7-43aa-9fb8-42eb99476fd2)
+
 
 
 # RDS Read Replicas – Use Cases
@@ -79,14 +80,15 @@ unaffected
 (=read) only kind of statements
 (not INSERT, UPDATE, DELETE)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9e4e5bb4-1cd0-4f48-bdc4-8d64450b5913/Untitled.png)
+![Screenshot 2023-08-24 084042](https://github.com/alinedam/Sitech-Internship/assets/108859223/2bd99f92-d246-4115-b174-a36d9d9a1021)
+
 
 # RDS Read Replicas – Network Cost
 
 - In AWS there’s a network cost when data goes from one AZ to another
 - For RDS Read Replicas within the same region, you don’t pay that fee
 
-![Screenshot 2023-08-24 084042](https://github.com/alinedam/Sitech-Internship/assets/108859223/bdb0067a-8068-4589-be62-48e08df1d848)
+![Screenshot 2023-08-24 084139](https://github.com/alinedam/Sitech-Internship/assets/108859223/10f5e1d1-e226-4019-8f43-c30a3445bea7)
 
 
 # RDS Multi AZ (Disaster Recovery)
@@ -101,7 +103,8 @@ network, instance or storage failure
 - Note:The Read Replicas be setup as
 Multi AZ for Disaster Recovery (DR)
 
-![Screenshot 2023-08-24 084139](https://github.com/alinedam/Sitech-Internship/assets/108859223/85add519-331e-41f6-99af-94af134e1082)
+![Screenshot 2023-08-24 084303](https://github.com/alinedam/Sitech-Internship/assets/108859223/e55e14b5-ffe2-4b27-be34-b4dedfff277a)
+
 
 
 # RDS – From Single-AZ to Multi-AZ
