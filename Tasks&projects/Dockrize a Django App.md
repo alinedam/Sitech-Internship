@@ -195,7 +195,11 @@ alisystem@ali:/home/ali/djangotask#$ docker network create --subnet=10.10.10.0/2
 alisystem@ali:/home/ali/djangotask $ docker run --network backend --ip=10.10.10.6 -h django-app -d django-app
 4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
 ```
+![Screenshot from 2023-09-17 08-38-13](https://github.com/alinedam/Sitech-Internship/assets/108859223/c769d769-5b77-4ba5-a3d9-fada8cb7a785)
+
+
 ```bash
 alisystem@ali:/home/ali/nginx# docker container run -itd --network=backend --ip=10.10.10.8 -h nginx-django-app nginx-reverse-proxy 
 4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
 ```
+![image](https://github.com/alinedam/Sitech-Internship/assets/108859223/e86971bd-64d3-40dd-bfba-f9ddf2a10e75)
