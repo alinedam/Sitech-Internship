@@ -168,3 +168,7 @@ The final step is to run the container you have just built using Docker:
 ```bash
 $ docker run -it -p 8000:8000 python-django-app
 ```
+```bash
+alisystem@ali:/home/ali/nginx# docker container run -itd --network=backend --ip=10.10.10.8 -h nginx-django-app nginx-reverse-proxy 
+4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
+```
