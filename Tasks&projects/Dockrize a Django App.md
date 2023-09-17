@@ -164,9 +164,36 @@ $ docker build -t python-django-app .
 ```
 
 The final step is to run the container you have just built using Docker:
+```bash
+# Allows docker to cache installed dependencies between builds
+COPY ./ ./ 
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Mounts the application code to the image
+COPY . code
+WORKDIR /code
+
+EXPOSE 8000
+
+# runs the production server
+ENTRYPOINT ["python", "mysite/manage.py"]
+CMD ["runserver", "0.0.0.0:8000"]
+```
 
 ```bash
 $ docker run -it -p 8000:8000 python-django-app
+```
+# **Create the Docker network that will host everything**
+## creating the network 
+```bash
+alisystem@ali:/home/ali/djangotask#$ docker network create --subnet=10.10.10.0/24 backend
+4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
+```
+## Ruining the Django Image using the Network we just created
+
+```bash
+alisystem@ali:/home/ali/djangotask $ docker run --network backend --ip=10.10.10.6 -h django-app -d django-app
+4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
 ```
 ```bash
 alisystem@ali:/home/ali/nginx# docker container run -itd --network=backend --ip=10.10.10.8 -h nginx-django-app nginx-reverse-proxy 
