@@ -228,6 +228,10 @@ COPY default.conf /etc/nginx/conf.d/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
+## Now Building the Nginx Docker Image
+```bash
+alisystem@ali:/home/ali/nginx#:$ docker build -t nginx-django-app .
+```
 ## running the docker image 
 ```bash
 alisystem@ali:/home/ali/nginx# docker container run -itd --network=backend --ip=10.10.10.8 -h nginx-django-app nginx-reverse-proxy 
