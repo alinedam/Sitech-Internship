@@ -196,10 +196,42 @@ alisystem@ali:/home/ali/djangotask $ docker run --network backend --ip=10.10.10.
 4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
 ```
 ![Screenshot from 2023-09-17 08-38-13](https://github.com/alinedam/Sitech-Internship/assets/108859223/c769d769-5b77-4ba5-a3d9-fada8cb7a785)
+# **Step 3 : host Nginx container acting as a reverse proxy for the Django app**
 
+## First you have to Create a directory named nginx with two files dockerfile and default.conf in it 
+```bash
 
+alisystem@ali:`home/nginx$ ls
+dokerfile   default.conf
+```
+## Create default nginx config file in it and add proxy pass inside the config file (exactly inside the server block then inside the location block )
+
+```bash
+server {
+    listen 80;
+    server_name example.com;
+
+    location / {
+        proxy_pass http://10.10.10.6:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+} 
+```
+## Creating an Nginx Dockerfile
+
+```bash
+FROM nginx:stable@sha256:4a1d2e00b08fce95e140e272d9a0223d2d059142ca783bf43cf121d7c11c7df8
+FROM nginx:stable
+COPY default.conf /etc/nginx/conf.d/
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+## running the docker image 
 ```bash
 alisystem@ali:/home/ali/nginx# docker container run -itd --network=backend --ip=10.10.10.8 -h nginx-django-app nginx-reverse-proxy 
 4ccaac8c0373c86c6912647e85604daddb86821781056665d7f33ccb03fa7e14
 ```
+# **Now we have a running Dockraized Nginx Reverse proxy that redirects the traffic to the django application** 
 ![image](https://github.com/alinedam/Sitech-Internship/assets/108859223/e86971bd-64d3-40dd-bfba-f9ddf2a10e75)
