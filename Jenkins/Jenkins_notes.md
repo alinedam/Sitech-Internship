@@ -1,9 +1,4 @@
-<a href="https://jenkins.io">
-  <picture>
-    <source width="200" media="(prefers-color-scheme: dark)" srcset="https://www.jenkins.io/images/jenkins-logo-title-dark.svg">
-    <img width="200" src="https://www.jenkins.io/images/jenkins-logo-title.svg">
-  </picture>
-</a>
+
 
 ## What is Jenkins
 
