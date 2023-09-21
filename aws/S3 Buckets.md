@@ -1,4 +1,4 @@
-# [S3 Buckets](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#s3-buckets)
+# S3 Buckets
 
 - Amazon S3 allows people to store objects (files) in “buckets” (directories)
 - Buckets must have a globally unique name
@@ -22,7 +22,7 @@
     - Version ID (if versioning is enabled)
     - 3500 PUTS / 5500 GETS limit per prefix (this is why it's important to never group items with a fixed name like "user-123", "user-493", etc.)
 
-### [AWS S3 - Versioning](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#aws-s3---versioning)
+### AWS S3 - Versioning
 
 - Enabled at the bucket level
 - Same key overwrite will increment the “version”: 1, 2, 3
@@ -31,7 +31,7 @@
     - Easy roll back to previous versions
 - Any file that is not version prior to enabling versioning will have the version “null”
 
-### [S3 Encryption for Objects](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#s3-encryption-for-objects)
+### S3 Encryption for Objects
 
 - There are 4 methods of encrypt objects in S3
     - SSE-S3: encrypts S3 objects
@@ -54,7 +54,7 @@
         - Clients must decrypt data themselves when retrieving from S3
         - Customer fully manages the keys and encryption cycle
 
-### [Encryption in transit (SSL)](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#encryption-in-transit-ssl)
+### [Encryption in transit (SSL)]
 
 - AWS S3 exposes:
     - HTTP endpoint: non encrypted
@@ -63,8 +63,7 @@
 - HTTPS is mandatory for SSE-C
 - Encryption in flight is also called SSL / TLS
 
-### [S3 Security](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#s3-security)
-
+### [S3 Security]
 - User based
     - IAM policies - which API calls should be allowed for a specific user from IAM console
 - Resource based
@@ -80,8 +79,7 @@
 - MFA (multi factor authentication) can be required in versioned buckets to delete objects
 - Signed URLs: URLS that are valid only for a limited time (ex: premium video services for logged in users)
 
-### [S3 Bucket Policies](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#s3-bucket-policies)
-
+### S3 Bucket Policies
 - JSON based policies
     - Resources: buckets and objects
     - Actions: Set of API to Allow or Deny
@@ -92,8 +90,7 @@
     - Force objects to be encrypted at upload
     - Grant access to another account (Cross Account)
 
-### [S3 Websites](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#s3-websites)
-
+### S3 Websites
 - S3 can host static website and have them accessible on the world wide web
 - The website URL will be:
     - http://**bucket-name**.s3-website-**AWS-region**.amazonaws.com
@@ -102,13 +99,13 @@
 - If you get a 403 (forbidden) error, make sure the bucket policy allows public reads!
 - 
 
-### [S3 Cors](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#s3-cors)
+### S3 Cors
 
 - If you request data from another S3 bucket, you need to enable CORS
 - Cross Origin Resource Sharing allows you to limit the number of websites that can request your files in S3 (and limit your costs)
 - This is a popular exam question
 
-### [AWS S3 - Consistency Model](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#aws-s3---consistency-model)
+### AWS S3 - Consistency Model
 
 - Read after write consistency for PUTS of new objects
     - As soon as an object is written, we can retrieve it e.g: (PUT 200 -> GET 200)
@@ -126,7 +123,7 @@
     ex: (DELETE 200 -> GET 200)
     
 
-### [AWS S3 - Other](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#aws-s3---other)
+### AWS S3 - Other
 
 - S3 can send notifications on changes to
     - AWS SQS: queue service
@@ -134,7 +131,7 @@
     - AWS Lambda: serverless service
 - S3 has a cross region replication feature (managed)
 
-### [AWS S3 Performance](https://github.com/itsmostafa/certified-aws-developer-associate-notes/blob/master/1-aws-fundamentals/s3.md#aws-s3-performance)
+### AWS S3 Performance
 
 - Faster upload of large objects (>100MB), use multipart upload
     - Parallelizes PUTs for greater throughput
